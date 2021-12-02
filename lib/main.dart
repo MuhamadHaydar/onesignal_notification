@@ -30,14 +30,15 @@ class _MyAppState extends State<MyApp> {
 
     OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
 
+    // NOTE: Replace with your own app ID from https://www.onesignal.com
+    await OneSignal.shared
+        .setAppId("5e6fb46b-a322-4b61-beeb-b2a63d56866d");
 
     OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
       print("Accepted permission: $accepted");
     });
 
-    // NOTE: Replace with your own app ID from https://www.onesignal.com
-    await OneSignal.shared
-        .setAppId("5e6fb46b-a322-4b61-beeb-b2a63d56866d");
+
 
 
     OneSignal.shared
